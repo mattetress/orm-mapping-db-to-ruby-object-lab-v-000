@@ -38,7 +38,6 @@ class Student
       FROM students
       WHERE grade < 12
     SQL
-
     DB[:conn].execute(sql).map { |row| Student.new_from_db(row) }
   end
 
@@ -49,7 +48,6 @@ class Student
       WHERE grade = 10
       LIMIT ?
     SQL
-
     DB[:conn].execute(sql, num).map { |row| Student.new_from_db(row) }
   end
 
@@ -60,7 +58,6 @@ class Student
       WHERE grade = 10
       LIMIT 1
     SQL
-
     Student.new_from_db(DB[:conn].execute(sql).flatten)
   end
 
