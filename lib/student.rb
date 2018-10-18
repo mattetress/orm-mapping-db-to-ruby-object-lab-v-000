@@ -48,7 +48,7 @@ class Student
       FROM students
       WHERE grade < 12
     SQL
-    
+
     DB[:conn].execute(sql).map { |row| Student.new_from_db(row) }
   end
 
@@ -99,7 +99,7 @@ class Student
       grade TEXT
     )
     SQL
-    
+
     DB[:conn].execute(sql)
   end
 
